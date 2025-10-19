@@ -7,7 +7,7 @@ from telebot.types import (
     InlineKeyboardButton
 )
 
-BOT_TOKEN = "8144846739:AAGR7noz3r_3k8hBZmUSYWy_KY2-w_zXcsQ" 
+BOT_TOKEN = "0" 
 WEB_URL = "https://yandex.ru/games/app/351956" 
 
 bot = TeleBot(BOT_TOKEN)

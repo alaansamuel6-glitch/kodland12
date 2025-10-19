@@ -16,13 +16,10 @@ bot = TeleBot(BOT_TOKEN)
 def start(message):
     reply_keyboard_markup = ReplyKeyboardMarkup(resize_keyboard=True)
     reply_keyboard_markup.row(KeyboardButton("Запустить homakweb", web_app=WebAppInfo(WEB_URL)))
-
     inline_keyboard_markup = InlineKeyboardMarkup()
     inline_keyboard_markup.row(InlineKeyboardButton('Запустить homakweb', web_app=WebAppInfo(WEB_URL)))
-
     bot.reply_to(message, "Нажмите на кнопку ниже, чтобы запустить homakweb", reply_markup=inline_keyboard_markup)
     bot.reply_to(message, "Нажмите на кнопку клавиатуры, чтобы запустить homakweb", reply_markup=reply_keyboard_markup)
-
 @bot.message_handler(content_types=['web_app_data'])
 def web_app(message):
     bot.reply_to(message, f'Ваше сообщение: "{message.web_app_data.data}"')
